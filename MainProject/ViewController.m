@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import <YMMediator+YMMediatorLoginActions.h>
 @interface ViewController ()
 
 @end
@@ -16,9 +16,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UIViewController *vc = [[YMMediator sharedInstance] MediatorViewControllerForLogin];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
